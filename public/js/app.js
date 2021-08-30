@@ -1,5 +1,3 @@
-console.log('Printing out of js folder')
-
 //fetch = browser side API
 //http://puzzle.mead.io/puzzle
 
