@@ -1,0 +1,14 @@
+git status
+git add .
+
+git remote add origin git@github.com:rednaskela-sarf/node3-weather-website.git
+git push -u origin main
+-u = upstream
+https://github.com/rednaskela-sarf/node3-weather-website.git
+
+mkdir /home/aleksander/.ssh
+ssh-keygen -t rsa -b 4096 -C "alekfras@yahoo.pl"
+eval "$(ssh-agent -s)"
+ssh-add /home/aleksander/.ssh/id_rsa
+
+cat ~/.ssh/id_rsa
