@@ -1,11 +1,12 @@
 const path = require('path')
 const express = require('express')
-const hbs = require('hbs') //for partials, handlebars
+const hbs = require('hbs') //for partials, handlebars, templating engine
 const geocode = require('../public/utils/geocode')
 const forecast = require('../public/utils/forecast')
 
 //initialize express application
 const app = express()
+const port = process.env.PORT || 3000
 
 //setup paths
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -107,7 +108,7 @@ app.get('*', (req, res) => {
 })
 
 //starts the server, first arg is port number
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
 

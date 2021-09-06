@@ -18,11 +18,13 @@ const messageTwo = document.querySelector("#message-2")
 
 //adding avent listener to a form
 weatherForm.addEventListener('submit', (event) => {
-    //prevents browser from refreshing
+    //prevents browser from refreshing and clearing form data
     event.preventDefault()
+
+    //get location to find from inpt field
     const location = searchTerm.value
 
-    fetch('http://localhost:3000/weather?address=' + 
+    fetch('/weather?address=' + 
             encodeURIComponent(location)).then((response) => {
             response.json().then((data) => {
             messageOne.textContent = 'Loading ...'
