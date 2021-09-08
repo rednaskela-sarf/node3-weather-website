@@ -11,7 +11,16 @@ const forecast = (latitude, longitude, callback) => {
         } else if (response.body.error) {
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, response.body.current.weather_descriptions[0] + ". It is currently " + response.body.current.temperature + " degress out.")
+            //console.log(response.body)
+            callback(undefined, 
+                response.body.location.country + ', ' + response.body.location.name + ', ' + response.body.location.region + ', ' + response.body.request.query + ", " +  
+                "Weather description: " + response.body.current.weather_descriptions[0]+ ", " +
+                "Temperature: " + response.body.current.temperature + ", " +
+                "Humididty: " + response.body.current.humidity + ", " +
+                "Pressure: " + response.body.current.pressure + ", " +
+                "Wind speed: " + response.body.current.wind_speed + ", " +
+                "Wind direction: " + response.body.current.wind_dir + "."
+                )
         }
     })
 }
